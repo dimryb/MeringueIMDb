@@ -1,33 +1,33 @@
 package space.rybakov.meringueimdb.presentation
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
+import dagger.hilt.android.AndroidEntryPoint
 import space.rybakov.meringueimdb.R
-import space.rybakov.meringueimdb.databinding.FragmentSecondBinding
+import space.rybakov.meringueimdb.databinding.FragmentDetailsBinding
+import space.rybakov.meringueimdb.presentation.viewmodel.FilmViewModel
 
-/**
- * A simple [Fragment] subclass as the second destination in the navigation.
- */
-class SecondFragment : Fragment() {
+@AndroidEntryPoint
+class DetailsFragment : Fragment() {
 
-    private var _binding: FragmentSecondBinding? = null
+    private val viewModel: FilmViewModel by activityViewModels()
 
-    // This property is only valid between onCreateView and
-    // onDestroyView.
-    private val binding get() = _binding!!
+    private var _binding: FragmentDetailsBinding? = null
+    private val binding: FragmentDetailsBinding
+        get() = _binding ?: throw RuntimeException("FragmentDetailsBinding == null")
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
 
-        _binding = FragmentSecondBinding.inflate(inflater, container, false)
+        _binding = FragmentDetailsBinding.inflate(inflater, container, false)
         return binding.root
-
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

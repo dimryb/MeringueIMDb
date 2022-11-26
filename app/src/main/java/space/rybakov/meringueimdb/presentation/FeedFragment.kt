@@ -1,33 +1,33 @@
 package space.rybakov.meringueimdb.presentation
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
+import dagger.hilt.android.AndroidEntryPoint
 import space.rybakov.meringueimdb.R
-import space.rybakov.meringueimdb.databinding.FragmentFirstBinding
+import space.rybakov.meringueimdb.databinding.FragmentFeedBinding
+import space.rybakov.meringueimdb.presentation.viewmodel.FilmViewModel
 
-/**
- * A simple [Fragment] subclass as the default destination in the navigation.
- */
-class FirstFragment : Fragment() {
+@AndroidEntryPoint
+class FeedFragment : Fragment() {
 
-    private var _binding: FragmentFirstBinding? = null
+    private val viewModel: FilmViewModel by activityViewModels()
 
-    // This property is only valid between onCreateView and
-    // onDestroyView.
-    private val binding get() = _binding!!
+    private var _binding: FragmentFeedBinding? = null
+    private val binding: FragmentFeedBinding
+        get() = _binding ?: throw RuntimeException("FragmentFeedBinding == null!")
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
 
-        _binding = FragmentFirstBinding.inflate(inflater, container, false)
+        _binding = FragmentFeedBinding.inflate(inflater, container, false)
         return binding.root
-
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
