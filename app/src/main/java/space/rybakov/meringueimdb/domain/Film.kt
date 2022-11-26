@@ -1,6 +1,6 @@
 package space.rybakov.meringueimdb.domain
 
-data class FilmItem(
+data class Film(
     val id: String,
     val title: String,
     val year: String,

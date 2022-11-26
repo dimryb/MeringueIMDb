@@ -6,9 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
-import androidx.navigation.fragment.findNavController
 import dagger.hilt.android.AndroidEntryPoint
-import space.rybakov.meringueimdb.R
 import space.rybakov.meringueimdb.databinding.FragmentFeedBinding
 import space.rybakov.meringueimdb.presentation.viewmodel.FilmViewModel
 
@@ -33,9 +31,20 @@ class FeedFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+
         binding.buttonSearch.setOnClickListener {
-            findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
+            //findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
+            viewModel.search(title = "avatar", quantity = 2)
         }
+
+        viewModel.data.observe(viewLifecycleOwner) { feedModel ->
+            println(feedModel.films)
+        }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        viewModel.search(title = "avatar", quantity = 2)
     }
 
     override fun onDestroyView() {
