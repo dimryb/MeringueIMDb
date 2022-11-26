@@ -12,7 +12,7 @@ class FilmRepositoryImpl : FilmRepository {
         TODO("Not yet implemented")
     }
 
-    override suspend fun getById(id: Long) {
+    override suspend fun getById(id: String) {
         TODO("Not yet implemented")
     }
 }
