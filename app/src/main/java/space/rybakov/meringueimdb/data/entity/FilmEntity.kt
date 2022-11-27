@@ -15,10 +15,13 @@ data class FilmEntity(
         year = Year,
         poster = Poster,
         type = Type,
+        url = BASE_URL + imdbID,
     )
 
     companion object {
         fun fromDto(film: Film): FilmEntity =
             with(film) { return FilmEntity(title, year, id, poster, type) }
+
+        private const val BASE_URL = "https://www.imdb.com/title/"
     }
 }

@@ -10,4 +10,6 @@ data class Film(
     val year: String,
     val poster: String,
     val type: String,
+
+    val url: String,
 ): Parcelable

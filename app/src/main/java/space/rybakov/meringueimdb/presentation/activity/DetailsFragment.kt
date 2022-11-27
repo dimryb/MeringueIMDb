@@ -1,5 +1,7 @@
 package space.rybakov.meringueimdb.presentation.activity
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -53,6 +55,9 @@ class DetailsFragment : Fragment() {
         binding.apply {
             toolbar.buttonAction.setOnClickListener{
                 findNavController().navigateUp()
+            }
+            buttonImdb.setOnClickListener {
+                startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(film.url)))
             }
         }
     }
