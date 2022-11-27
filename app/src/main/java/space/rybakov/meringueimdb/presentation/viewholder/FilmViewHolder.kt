@@ -27,7 +27,7 @@ class FilmViewHolder(
 
     private fun setupClickListeners(film: Film) {
         binding.apply {
-            buttonComment.setOnClickListener { onInteractionListener.onComment(film) }
+            buttonComment.setOnClickListener { onInteractionListener.onComment(film, "") }
             layoutFilm.setOnClickListener { onInteractionListener.onDetails(film) }
             imageViewPoster.setOnClickListener { onInteractionListener.onDetails(film) }
 

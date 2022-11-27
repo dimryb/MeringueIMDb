@@ -4,6 +4,6 @@ import space.rybakov.meringueimdb.domain.Film
 
 interface OnInteractionListener {
     fun onLike(film: Film)
-    fun onComment(film: Film)
+    fun onComment(film: Film, comment: String)
     fun onDetails(film: Film)
 }

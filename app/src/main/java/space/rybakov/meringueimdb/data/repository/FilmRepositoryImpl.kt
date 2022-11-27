@@ -48,6 +48,14 @@ class FilmRepositoryImpl @Inject constructor(
         println(body)
     }
 
+    override suspend fun likeById(id: String, liked: Boolean) {
+        // Todo: сделать обработку лайков
+    }
+
+    override suspend fun commentById(id: String, comment: String) {
+        // Todo: сделать обработку коментов
+    }
+
     companion object {
         private val API_KEY = "80cdf7f7"
     }

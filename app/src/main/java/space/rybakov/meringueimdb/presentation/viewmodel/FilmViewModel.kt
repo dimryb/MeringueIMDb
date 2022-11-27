@@ -5,6 +5,7 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.launch
+import space.rybakov.meringueimdb.domain.Film
 import space.rybakov.meringueimdb.domain.FilmRepository
 import space.rybakov.meringueimdb.presentation.model.FeedModel
 import space.rybakov.meringueimdb.presentation.model.FeedModelState
@@ -26,7 +27,7 @@ class FilmViewModel @Inject constructor(
     fun search (title: String, quantity: Int){
         viewModelScope.launch {
             try {
-                repository.search(title, page = 2)
+                repository.search(title, page = quantity)
                 _state.value = FeedModelState.Idle
             } catch (e: Exception){
                 _state.value = FeedModelState.Error
@@ -34,12 +35,26 @@ class FilmViewModel @Inject constructor(
         }
     }
 
-    fun like (id: String){
-
+    fun like (id: String, liked: Boolean){
+        viewModelScope.launch {
+            try {
+                repository.likeById(id, liked)
+                _state.value = FeedModelState.Idle
+            } catch (e: Exception){
+                _state.value = FeedModelState.Error
+            }
+        }
     }
 
     fun comments (id: String, comment: String){
-
+        viewModelScope.launch {
+            try {
+                repository.commentById(id, comment)
+                _state.value = FeedModelState.Idle
+            } catch (e: Exception){
+                _state.value = FeedModelState.Error
+            }
+        }
     }
 
 }

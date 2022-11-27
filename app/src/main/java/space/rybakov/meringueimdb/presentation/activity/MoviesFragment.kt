@@ -6,7 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
-import androidx.fragment.app.add
 import androidx.navigation.fragment.findNavController
 import dagger.hilt.android.AndroidEntryPoint
 import space.rybakov.meringueimdb.R
@@ -27,11 +26,11 @@ class MoviesFragment : Fragment() {
 
     private val adapter = FilmAdapter(object : OnInteractionListener {
         override fun onLike(film: Film) {
-            //TODO("Not yet implemented")
+            viewModel.like(film.id, film.liked)
         }
 
-        override fun onComment(film: Film) {
-            //TODO("Not yet implemented")
+        override fun onComment(film: Film, comment: String) {
+            viewModel.comments(film.id, comment)
         }
 
         override fun onDetails(film: Film) {
@@ -56,7 +55,6 @@ class MoviesFragment : Fragment() {
 
     private fun observeViewModel() {
         viewModel.data.observe(viewLifecycleOwner) { feedModel ->
-            println(feedModel.films)
             adapter.submitList(feedModel.films)
         }
 

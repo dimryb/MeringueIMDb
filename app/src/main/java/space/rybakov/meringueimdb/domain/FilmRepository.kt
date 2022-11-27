@@ -8,5 +8,6 @@ interface FilmRepository {
     suspend fun search(title: String, page: Int)
     suspend fun getByTitle(title: String)
     suspend fun getById(id: String)
-    // suspend fun likeById(id: Long) TODO: разобраться как в Api лайки ставить
+    suspend fun likeById(id: String, liked: Boolean)
+    suspend fun commentById(id: String, comment: String)
 }
