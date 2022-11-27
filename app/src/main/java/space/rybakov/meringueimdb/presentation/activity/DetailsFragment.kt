@@ -42,7 +42,7 @@ class DetailsFragment : Fragment() {
         setupClickListener(args.film)
     }
 
-    private fun setContent(film: Film){
+    private fun setContent(film: Film) {
         binding.apply {
             textViewTitleDetail.text = film.title
             textViewYearDetail.text = film.year
@@ -51,9 +51,9 @@ class DetailsFragment : Fragment() {
         }
     }
 
-    private fun setupClickListener(film: Film){
+    private fun setupClickListener(film: Film) {
         binding.apply {
-            toolbar.buttonAction.setOnClickListener{
+            toolbar.buttonAction.setOnClickListener {
                 findNavController().navigateUp()
             }
             buttonImdb.setOnClickListener {

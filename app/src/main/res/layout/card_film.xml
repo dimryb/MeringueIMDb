@@ -8,68 +8,83 @@
     android:clickable="true"
     android:focusable="true">
 
-    <ImageView
-        android:id="@+id/imageView_poster"
-        android:layout_width="60dp"
-        android:layout_height="90dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="16dp"
-        android:contentDescription="description image"
-        android:clickable="true"
-        android:focusable="true"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_horizontal"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="@dimen/margin_horizontal"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/card_film_shape"
+        android:elevation="@dimen/elevation"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <TextView
-        android:id="@+id/textView_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="24dp"
-        android:text="Film title"
-        app:layout_constraintStart_toEndOf="@id/imageView_poster"
-        app:layout_constraintTop_toTopOf="parent" />
+        <ImageView
+            android:id="@+id/imageView_poster"
+            android:layout_width="@dimen/card_image_width"
+            android:layout_height="@dimen/card_image_height"
+            android:layout_marginStart="@dimen/card_image_marginStart"
+            android:layout_marginTop="@dimen/card_image_margin_vertical"
+            android:layout_marginBottom="@dimen/card_image_margin_vertical"
+            android:clickable="true"
+            android:contentDescription="description image"
+            android:focusable="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/textView_year"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="3dp"
-        android:text="Year"
-        app:layout_constraintStart_toEndOf="@id/imageView_poster"
-        app:layout_constraintTop_toBottomOf="@id/textView_title" />
+        <TextView
+            android:id="@+id/textView_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/card_marginStart"
+            android:layout_marginTop="@dimen/card_title_marginTop"
+            android:text="Film title"
+            app:layout_constraintStart_toEndOf="@id/imageView_poster"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/button_comment"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
-        android:text="C"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/button_like" />
+        <TextView
+            android:id="@+id/textView_year"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/card_marginStart"
+            android:layout_marginTop="@dimen/card_year_marginTop"
+            android:text="Year"
+            app:layout_constraintStart_toEndOf="@id/imageView_poster"
+            app:layout_constraintTop_toBottomOf="@id/textView_title" />
 
-    <Button
-        android:id="@+id/button_like"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
-        android:text="L"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        <Button
+            android:id="@+id/button_comment"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:text="C"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/button_like" />
 
-    <TextView
-        android:id="@+id/textView_type"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:text="Movie"
-        app:layout_constraintStart_toEndOf="@id/imageView_poster"
-        app:layout_constraintTop_toBottomOf="@id/textView_year" />
+        <Button
+            android:id="@+id/button_like"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:text="L"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:id="@+id/textView_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/card_marginStart"
+            android:layout_marginTop="16dp"
+            android:text="Movie"
+            app:layout_constraintStart_toEndOf="@id/imageView_poster"
+            app:layout_constraintTop_toBottomOf="@id/textView_year" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

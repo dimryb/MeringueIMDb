@@ -1,3 +1,11 @@
 <resources>
-    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="elevation">8dp</dimen>
+    <dimen name="margin_horizontal">16dp</dimen>
+    <dimen name="card_marginStart">16dp</dimen>
+    <dimen name="card_title_marginTop">16dp</dimen>
+    <dimen name="card_image_width">60dp</dimen>
+    <dimen name="card_image_height">90dp</dimen>
+    <dimen name="card_image_marginStart">16dp</dimen>
+    <dimen name="card_image_margin_vertical">8dp</dimen>
+    <dimen name="card_year_marginTop">8dp</dimen>
 </resources>
