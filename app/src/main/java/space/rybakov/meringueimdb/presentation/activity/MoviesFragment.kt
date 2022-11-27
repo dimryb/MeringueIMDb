@@ -27,6 +27,8 @@ class MoviesFragment : Fragment() {
 
     private val adapter = FilmAdapter(object : OnInteractionListener {
         override fun onLike(post: Film) {
+            findNavController().navigate(R.id.action_FilmFragment_to_DetailsFragment)
+
             TODO("Not yet implemented")
         }
 
@@ -65,7 +67,7 @@ class MoviesFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
 
-        binding.buttonSearch.setOnClickListener {
+        binding.toolbar.buttonAction.setOnClickListener {
             //findNavController().navigate(R.id.action_FilmsFragment_to_SearchFragment)
             parentFragmentManager.beginTransaction()
                 .add(R.id.nav_host_fragment, SearchFragment())

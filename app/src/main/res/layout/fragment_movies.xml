@@ -8,36 +8,10 @@
     android:layout_height="match_parent"
     tools:context=".presentation.activity.MoviesFragment">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <include
+        layout="@layout/toolbar"
         android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/white"
-        android:elevation="36dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <Button
-            android:id="@+id/button_search"
-            android:layout_width="48dp"
-            android:layout_height="46dp"
-            android:layout_marginStart="16dp"
-            android:text="S"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Movies"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/button_search"
-            app:layout_constraintTop_toTopOf="parent" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/films_list"

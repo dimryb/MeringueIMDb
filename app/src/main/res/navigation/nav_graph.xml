@@ -12,20 +12,12 @@
         tools:layout="@layout/fragment_movies">
 
         <action
-            android:id="@+id/action_FirstFragment_to_SecondFragment"
+            android:id="@+id/action_FilmFragment_to_DetailsFragment"
             app:destination="@id/DetailsFragment" />
-        <action
-            android:id="@+id/action_FilmsFragment_to_SearchFragment"
-            app:destination="@id/SearchFragment" />
     </fragment>
     <fragment
         android:id="@+id/DetailsFragment"
         android:name="space.rybakov.meringueimdb.presentation.activity.DetailsFragment"
         android:label="@string/second_fragment_label"
         tools:layout="@layout/fragment_details"/>
-    <fragment
-        android:id="@+id/SearchFragment"
-        android:name="space.rybakov.meringueimdb.presentation.activity.SearchFragment"
-        android:label="fragment_search"
-        tools:layout="@layout/fragment_search" />
 </navigation>
