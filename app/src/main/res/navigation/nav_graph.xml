@@ -3,26 +3,29 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/FirstFragment">
+    app:startDestination="@id/FilmsFragment">
 
     <fragment
-        android:id="@+id/FirstFragment"
-        android:name="space.rybakov.meringueimdb.presentation.MoviesFragment"
+        android:id="@+id/FilmsFragment"
+        android:name="space.rybakov.meringueimdb.presentation.activity.MoviesFragment"
         android:label="@string/first_fragment_label"
         tools:layout="@layout/fragment_movies">
 
         <action
             android:id="@+id/action_FirstFragment_to_SecondFragment"
-            app:destination="@id/SecondFragment" />
+            app:destination="@id/DetailsFragment" />
+        <action
+            android:id="@+id/action_FilmsFragment_to_SearchFragment"
+            app:destination="@id/SearchFragment" />
     </fragment>
     <fragment
-        android:id="@+id/SecondFragment"
-        android:name="space.rybakov.meringueimdb.presentation.DetailsFragment"
+        android:id="@+id/DetailsFragment"
+        android:name="space.rybakov.meringueimdb.presentation.activity.DetailsFragment"
         android:label="@string/second_fragment_label"
-        tools:layout="@layout/fragment_details">
-
-        <action
-            android:id="@+id/action_SecondFragment_to_FirstFragment"
-            app:destination="@id/FirstFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_details"/>
+    <fragment
+        android:id="@+id/SearchFragment"
+        android:name="space.rybakov.meringueimdb.presentation.activity.SearchFragment"
+        android:label="fragment_search"
+        tools:layout="@layout/fragment_search" />
 </navigation>

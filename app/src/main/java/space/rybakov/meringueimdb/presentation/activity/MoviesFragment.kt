@@ -1,4 +1,4 @@
-package space.rybakov.meringueimdb.presentation
+package space.rybakov.meringueimdb.presentation.activity
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,7 +6,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.fragment.app.add
+import androidx.navigation.fragment.findNavController
 import dagger.hilt.android.AndroidEntryPoint
+import space.rybakov.meringueimdb.R
 import space.rybakov.meringueimdb.databinding.FragmentMoviesBinding
 import space.rybakov.meringueimdb.domain.Film
 import space.rybakov.meringueimdb.presentation.adapter.FilmAdapter
@@ -49,7 +52,7 @@ class MoviesFragment : Fragment() {
         return binding.root
     }
 
-    private fun observeViewModel(){
+    private fun observeViewModel() {
         viewModel.data.observe(viewLifecycleOwner) { feedModel ->
             println(feedModel.films)
             adapter.submitList(feedModel.films)
@@ -63,8 +66,11 @@ class MoviesFragment : Fragment() {
 
 
         binding.buttonSearch.setOnClickListener {
-            //findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
-            viewModel.search(title = "avatar", quantity = 2)
+            //findNavController().navigate(R.id.action_FilmsFragment_to_SearchFragment)
+            parentFragmentManager.beginTransaction()
+                .add(R.id.nav_host_fragment, SearchFragment())
+                .addToBackStack("Search")
+                .commit()
         }
     }
 

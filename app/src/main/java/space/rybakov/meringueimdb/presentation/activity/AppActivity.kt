@@ -1,4 +1,4 @@
-package space.rybakov.meringueimdb.presentation
+package space.rybakov.meringueimdb.presentation.activity
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -21,12 +21,12 @@ class AppActivity : AppCompatActivity() {
         binding = ActivityAppBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        findNavController(R.id.nav_host_fragment_content_main)
+        findNavController(R.id.nav_host_fragment)
 
     }
 
     override fun onSupportNavigateUp(): Boolean {
-        val navController = findNavController(R.id.nav_host_fragment_content_main)
+        val navController = findNavController(R.id.nav_host_fragment)
         return navController.navigateUp(appBarConfiguration)
                 || super.onSupportNavigateUp()
     }

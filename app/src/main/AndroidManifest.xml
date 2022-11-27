@@ -17,7 +17,7 @@
         android:name=".presentation.application.App"
         tools:targetApi="31">
         <activity
-            android:name=".presentation.AppActivity"
+            android:name=".presentation.activity.AppActivity"
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.MeringueIMDb.NoActionBar">
