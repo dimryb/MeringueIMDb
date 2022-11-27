@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
-import com.google.android.material.snackbar.Snackbar
 import dagger.hilt.android.AndroidEntryPoint
 import space.rybakov.meringueimdb.R
 import space.rybakov.meringueimdb.databinding.ActivityAppBinding
@@ -24,11 +23,6 @@ class AppActivity : AppCompatActivity() {
 
         findNavController(R.id.nav_host_fragment_content_main)
 
-
-        binding.fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show()
-        }
     }
 
     override fun onSupportNavigateUp(): Boolean {

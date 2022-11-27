@@ -7,16 +7,16 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import dagger.hilt.android.AndroidEntryPoint
-import space.rybakov.meringueimdb.databinding.FragmentFeedBinding
+import space.rybakov.meringueimdb.databinding.FragmentMoviesBinding
 import space.rybakov.meringueimdb.presentation.viewmodel.FilmViewModel
 
 @AndroidEntryPoint
-class FeedFragment : Fragment() {
+class MoviesFragment : Fragment() {
 
     private val viewModel: FilmViewModel by activityViewModels()
 
-    private var _binding: FragmentFeedBinding? = null
-    private val binding: FragmentFeedBinding
+    private var _binding: FragmentMoviesBinding? = null
+    private val binding: FragmentMoviesBinding
         get() = _binding ?: throw RuntimeException("FragmentFeedBinding == null!")
 
     override fun onCreateView(
@@ -24,7 +24,7 @@ class FeedFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
 
-        _binding = FragmentFeedBinding.inflate(inflater, container, false)
+        _binding = FragmentMoviesBinding.inflate(inflater, container, false)
         return binding.root
     }
 
