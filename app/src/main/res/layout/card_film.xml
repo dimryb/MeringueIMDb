@@ -42,9 +42,11 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/card_marginStart"
             android:layout_marginTop="@dimen/card_title_marginTop"
-            tools:text="Film title"
+            android:textColor="@color/text_color"
+            android:textStyle="bold"
             app:layout_constraintStart_toEndOf="@id/imageView_poster"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Film title" />
 
         <TextView
             android:id="@+id/textView_year"
@@ -52,9 +54,11 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/card_marginStart"
             android:layout_marginTop="@dimen/card_year_marginTop"
-            tools:text="Year"
+            android:textColor="@color/text_color_grey"
+            android:textSize="10sp"
             app:layout_constraintStart_toEndOf="@id/imageView_poster"
-            app:layout_constraintTop_toBottomOf="@id/textView_title" />
+            app:layout_constraintTop_toBottomOf="@id/textView_title"
+            tools:text="Year" />
 
         <ImageButton
             android:id="@+id/button_comment"
@@ -87,9 +91,11 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/card_marginStart"
             android:layout_marginTop="16dp"
-            tools:text="Movie"
+            android:textColor="@color/text_color_grey"
+            android:textSize="10sp"
             app:layout_constraintStart_toEndOf="@id/imageView_poster"
-            app:layout_constraintTop_toBottomOf="@id/textView_year" />
+            app:layout_constraintTop_toBottomOf="@id/textView_year"
+            tools:text="Movie" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

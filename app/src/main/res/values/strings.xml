@@ -12,4 +12,10 @@
     <string name="comment_button">Comment button</string>
     <string name="movies">Movies</string>
     <string name="text_oops">OOPS NOTHING IS HERE.\nSET THE SEARCH PARAMETERS</string>
+    <string name="comments">COMMENTS</string>
+    <string name="search">Search</string>
+    <string name="imdb">IMDb</string>
+    <string name="write_your_comment">Write your comment</string>
+    <string name="leave_comment">Leave comment</string>
+    <string name="apply">Apply</string>
 </resources>
