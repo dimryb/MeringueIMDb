@@ -8,4 +8,8 @@
     <dimen name="card_image_marginStart">16dp</dimen>
     <dimen name="card_image_margin_vertical">8dp</dimen>
     <dimen name="card_year_marginTop">8dp</dimen>
+    <dimen name="button_size">32dp</dimen>
+    <dimen name="card_button_like_marinEnd">16dp</dimen>
+    <dimen name="card_button_marginBottom">16dp</dimen>
+    <dimen name="card_button_comment_marginEnd">8dp</dimen>
 </resources>

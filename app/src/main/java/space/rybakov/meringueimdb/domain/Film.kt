@@ -12,4 +12,5 @@ data class Film(
     val type: String,
 
     val url: String,
+    val liked: Boolean,
 ): Parcelable

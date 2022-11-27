@@ -16,6 +16,7 @@ data class FilmEntity(
         poster = Poster,
         type = Type,
         url = BASE_URL + imdbID,
+        liked = false,
     )
 
     companion object {

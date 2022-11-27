@@ -21,15 +21,20 @@ class FilmViewHolder(
             textViewYear.text = film.year
             textViewType.text = film.type
             imageViewPoster.load(film.poster)
+            buttonLike.isSelected = film.liked
         }
     }
 
     private fun setupClickListeners(film: Film) {
         binding.apply {
             buttonComment.setOnClickListener { onInteractionListener.onComment(film) }
-            buttonLike.setOnClickListener { onInteractionListener.onLike(film) }
             layoutFilm.setOnClickListener { onInteractionListener.onDetails(film) }
             imageViewPoster.setOnClickListener { onInteractionListener.onDetails(film) }
+
+            buttonLike.setOnClickListener {
+                it.isSelected = !it.isSelected
+                onInteractionListener.onLike(film.copy(liked = it.isSelected))
+            }
         }
     }
 
