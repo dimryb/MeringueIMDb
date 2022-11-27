@@ -1,3 +1,18 @@
 <resources>
-    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="fab_margin">48dp</dimen>
+    <dimen name="elevation">8dp</dimen>
+    <dimen name="margin_horizontal">16dp</dimen>
+    <dimen name="card_marginStart">16dp</dimen>
+    <dimen name="card_title_marginTop">16dp</dimen>
+    <dimen name="card_image_width">60dp</dimen>
+    <dimen name="card_image_height">90dp</dimen>
+    <dimen name="card_image_marginStart">16dp</dimen>
+    <dimen name="card_image_margin_vertical">8dp</dimen>
+    <dimen name="card_year_marginTop">4dp</dimen>
+    <dimen name="button_size">32dp</dimen>
+    <dimen name="card_button_like_marinEnd">16dp</dimen>
+    <dimen name="card_button_marginBottom">16dp</dimen>
+    <dimen name="card_button_comment_marginEnd">8dp</dimen>
+    <dimen name="toolbar_height">56dp</dimen>
+    <dimen name="icon_button_min_size">24dp</dimen>
 </resources>
