@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
@@ -56,9 +57,8 @@ class MoviesFragment : Fragment() {
     private fun observeViewModel() {
         viewModel.data.observe(viewLifecycleOwner) { feedModel ->
             adapter.submitList(feedModel.films)
+            binding.textViewOops.isVisible = feedModel.empty
         }
-
-        // TODO: Добавить вывод об отсутствии фильмов из feedModel.empty
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

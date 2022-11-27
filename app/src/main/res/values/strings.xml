@@ -11,4 +11,5 @@
     <string name="like_button">Like button</string>
     <string name="comment_button">Comment button</string>
     <string name="movies">Movies</string>
+    <string name="text_oops">OOPS NOTHING IS HERE.\nSET THE SEARCH PARAMETERS</string>
 </resources>
