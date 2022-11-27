@@ -6,11 +6,13 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import dagger.hilt.android.AndroidEntryPoint
+import space.rybakov.meringueimdb.R
 import space.rybakov.meringueimdb.databinding.FragmentDetailsBinding
 import space.rybakov.meringueimdb.domain.Film
 import space.rybakov.meringueimdb.presentation.view.load
@@ -48,6 +50,9 @@ class DetailsFragment : Fragment() {
             textViewYearDetail.text = film.year
             textViewTypeDetail.text = film.type
             imageViewPosterDetail.load(film.poster)
+            val arrow = ContextCompat.getDrawable(requireContext(), R.drawable.ic_arrow_1)
+            toolbar.buttonAction.setImageDrawable(arrow)
+            toolbar.toolbarTitle.text = film.title
         }
     }
 

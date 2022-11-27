@@ -10,4 +10,5 @@
     <string name="description_image">Description image</string>
     <string name="like_button">Like button</string>
     <string name="comment_button">Comment button</string>
+    <string name="movies">Movies</string>
 </resources>
