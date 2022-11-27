@@ -3,12 +3,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/FilmsFragment">
+    app:startDestination="@id/MoviesFragment">
 
     <fragment
-        android:id="@+id/FilmsFragment"
+        android:id="@+id/MoviesFragment"
         android:name="space.rybakov.meringueimdb.presentation.activity.MoviesFragment"
-        android:label="@string/first_fragment_label"
         tools:layout="@layout/fragment_movies">
 
         <action
@@ -18,6 +17,9 @@
     <fragment
         android:id="@+id/DetailsFragment"
         android:name="space.rybakov.meringueimdb.presentation.activity.DetailsFragment"
-        android:label="@string/second_fragment_label"
-        tools:layout="@layout/fragment_details"/>
+        tools:layout="@layout/fragment_details">
+        <argument
+            android:name="film"
+            app:argType="space.rybakov.meringueimdb.domain.Film" />
+    </fragment>
 </navigation>

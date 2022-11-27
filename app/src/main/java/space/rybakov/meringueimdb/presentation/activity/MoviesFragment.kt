@@ -26,18 +26,18 @@ class MoviesFragment : Fragment() {
         get() = _binding ?: throw RuntimeException("FragmentFeedBinding == null!")
 
     private val adapter = FilmAdapter(object : OnInteractionListener {
-        override fun onLike(post: Film) {
-            findNavController().navigate(R.id.action_FilmFragment_to_DetailsFragment)
-
-            TODO("Not yet implemented")
+        override fun onLike(film: Film) {
+            //TODO("Not yet implemented")
         }
 
-        override fun onComment(post: Film) {
-            TODO("Not yet implemented")
+        override fun onComment(film: Film) {
+            //TODO("Not yet implemented")
         }
 
-        override fun onDetails(post: Film) {
-            TODO("Not yet implemented")
+        override fun onDetails(film: Film) {
+            findNavController().navigate(
+                MoviesFragmentDirections.actionFilmFragmentToDetailsFragment(film)
+            )
         }
     })
 
@@ -66,9 +66,7 @@ class MoviesFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-
         binding.toolbar.buttonAction.setOnClickListener {
-            //findNavController().navigate(R.id.action_FilmsFragment_to_SearchFragment)
             parentFragmentManager.beginTransaction()
                 .add(R.id.nav_host_fragment, SearchFragment())
                 .addToBackStack("Search")

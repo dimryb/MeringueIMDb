@@ -12,14 +12,24 @@ class FilmViewHolder(
 
     fun bind(film: Film) {
         setContent(film)
+        setupClickListeners(film)
     }
 
     private fun setContent(film: Film) {
         binding.apply {
             textViewTitle.text = film.title
             textViewYear.text = film.year
-            textViewType.text = "Movie" // TODO: брать из фильма
+            textViewType.text = film.type
             imageViewPoster.load(film.poster)
+        }
+    }
+
+    private fun setupClickListeners(film: Film) {
+        binding.apply {
+            buttonComment.setOnClickListener { onInteractionListener.onComment(film) }
+            buttonLike.setOnClickListener { onInteractionListener.onLike(film) }
+            layoutFilm.setOnClickListener { onInteractionListener.onDetails(film) }
+            imageViewPoster.setOnClickListener { onInteractionListener.onDetails(film) }
         }
     }
 

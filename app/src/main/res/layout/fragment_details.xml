@@ -22,7 +22,7 @@
         android:elevation="32dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar">
+        app:layout_constraintTop_toBottomOf="@id/toolbar">
 
         <Button
             android:id="@+id/button_comment_detail"
@@ -32,7 +32,7 @@
             android:layout_marginBottom="16dp"
             android:text="IMDb"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/button_like_detail" />
+            app:layout_constraintEnd_toStartOf="@id/button_like_detail" />
 
         <Button
             android:id="@+id/button_like_detail"
@@ -51,8 +51,8 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="32dp"
             android:text="Movie"
-            app:layout_constraintStart_toEndOf="@+id/imageView_poster_detail"
-            app:layout_constraintTop_toBottomOf="@+id/textView_year_detail" />
+            app:layout_constraintStart_toEndOf="@id/imageView_poster_detail"
+            app:layout_constraintTop_toBottomOf="@id/textView_year_detail" />
 
         <TextView
             android:id="@+id/textView_year_detail"
@@ -61,8 +61,8 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
             android:text="Year"
-            app:layout_constraintStart_toEndOf="@+id/imageView_poster_detail"
-            app:layout_constraintTop_toBottomOf="@+id/textView_title_detail" />
+            app:layout_constraintStart_toEndOf="@id/imageView_poster_detail"
+            app:layout_constraintTop_toBottomOf="@id/textView_title_detail" />
 
         <TextView
             android:id="@+id/textView_title_detail"
@@ -76,7 +76,7 @@
 
         <ImageView
             android:id="@+id/imageView_poster_detail"
-            android:layout_width="120dp"
+            android:layout_width="140dp"
             android:layout_height="200dp"
             android:layout_marginStart="24dp"
             android:layout_marginTop="16dp"
@@ -100,7 +100,7 @@
         android:elevation="32dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView_comments">
+        app:layout_constraintTop_toBottomOf="@id/textView_comments">
 
         <EditText
             android:id="@+id/editText_comment"
@@ -138,7 +138,7 @@
         android:layout_marginTop="16dp"
         android:text="COMMENTS"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/detail" />
+        app:layout_constraintTop_toBottomOf="@id/detail" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

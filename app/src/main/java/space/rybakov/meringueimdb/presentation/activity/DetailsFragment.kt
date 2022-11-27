@@ -7,13 +7,17 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import dagger.hilt.android.AndroidEntryPoint
-import space.rybakov.meringueimdb.R
 import space.rybakov.meringueimdb.databinding.FragmentDetailsBinding
+import space.rybakov.meringueimdb.domain.Film
+import space.rybakov.meringueimdb.presentation.view.load
 import space.rybakov.meringueimdb.presentation.viewmodel.FilmViewModel
 
 @AndroidEntryPoint
 class DetailsFragment : Fragment() {
+
+    private val args by navArgs<DetailsFragmentArgs>()
 
     private val viewModel: FilmViewModel by activityViewModels()
 
@@ -32,10 +36,25 @@ class DetailsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        setContent(args.film)
+        setupClickListener(args.film)
+    }
 
-//        binding.buttonSecond.setOnClickListener {
-//            //findNavController().navigate(R.id.action_SecondFragment_to_FirstFragment)
-//        }
+    private fun setContent(film: Film){
+        binding.apply {
+            textViewTitleDetail.text = film.title
+            textViewYearDetail.text = film.year
+            textViewTypeDetail.text = film.type
+            imageViewPosterDetail.load(film.poster)
+        }
+    }
+
+    private fun setupClickListener(film: Film){
+        binding.apply {
+            toolbar.buttonAction.setOnClickListener{
+                findNavController().navigateUp()
+            }
+        }
     }
 
     override fun onDestroyView() {
