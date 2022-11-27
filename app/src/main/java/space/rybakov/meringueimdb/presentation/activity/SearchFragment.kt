@@ -9,6 +9,7 @@ import androidx.fragment.app.activityViewModels
 import dagger.hilt.android.AndroidEntryPoint
 import space.rybakov.meringueimdb.databinding.FragmentSearchBinding
 import space.rybakov.meringueimdb.presentation.viewmodel.FilmViewModel
+import java.lang.NumberFormatException
 
 @AndroidEntryPoint
 class SearchFragment : Fragment() {
@@ -25,9 +26,41 @@ class SearchFragment : Fragment() {
     ): View {
 
         _binding = FragmentSearchBinding.inflate(inflater, container, false)
+
+        setupListeners()
         return binding.root
     }
 
+    private fun setupListeners() {
+        with(binding) {
+            buttonApply.setOnClickListener {
+
+                val title = editTextTitle.text.toString()
+                if (title.isBlank()){
+                    editTextTitle.requestFocus()
+                    return@setOnClickListener
+                }
+
+                try {
+                    val quantity = editTextQuantity.text.toString().toInt()
+                    if ((quantity <= 0)||(quantity > 100)){
+                        editTextQuantity.text.clear()
+                        editTextQuantity.requestFocus()
+                        return@setOnClickListener
+                    }
+                    viewModel.search(
+                        title = title,
+                        quantity = quantity
+                    )
+                    parentFragmentManager.popBackStack()
+                }catch (e: NumberFormatException){
+                    editTextQuantity.text.clear()
+                    editTextQuantity.requestFocus()
+                    return@setOnClickListener
+                }
+            }
+        }
+    }
 
     override fun onDestroyView() {
         super.onDestroyView()

@@ -74,11 +74,6 @@ class MoviesFragment : Fragment() {
         }
     }
 
-    override fun onResume() {
-        super.onResume()
-        viewModel.search(title = "avatar", quantity = 2)
-    }
-
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
